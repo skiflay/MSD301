@@ -1,0 +1,25 @@
+W1D1 Algorism Assignment
+1.	What happens when an assignment is performed without using let or const keywords in strict mode?
+A-	It will change previously-accepted (in non-strict mode) mistakes into errors or it would otherwise fail to throw an exception.
+2.	List 5 reserved keywords in JavaScript.
+A-	const, Boolean, int, if, class, return 
+3.	How is a computer program similar/ different than an algorithm?
+A-	Both are sequence of instructions to achieve specific task and meant to solve problems. Algorithm is something conceptual, more of idea and is a step by step instruction readable by humans. However computer program is more linked to the execution of one or more tasks by a computer and is written in machine readable language. 
+4.	Write at least two algorithms you perform on your daily life, with at least one algorithm that can be converted to computer program.
+A- get_dressed()
+    {
+      put_on( red_shirt );
+      put_on( blue_jeans );  
+      put_on( belt );
+      put_on( white_socks );
+      put_on( sneakers );
+    }
+B-	TrafficLight() {
+If(traffic light is Red){
+Stop the car;
+If(traffic light is Yellow){
+Slow the car;
+If(traffic light is Green){
+Run the car;
+}
+
