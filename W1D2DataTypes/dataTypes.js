@@ -11,6 +11,11 @@ const mile = Number(km) * 0.62
 console.log(mile);
 
 //boxes of cans in stacks
+const totalBoxes = prompt("Enter the Total Number of Boxes: ")
+const eachStack = prompt("Enter the number of Boxes in Each Stack: ")
+const NumOfStack = Math.ceil(totalBoxes/eachStack);
+console.log(`You make ${NumOfStack} number of stack`)
+
 
 //mileage of a vehicle
 const InitialMlg = prompt("Enter Initial Mileage of your Vehicle: ");
