@@ -1,4 +1,5 @@
 "use strict";
+const prompt = require("prompt-sync")()
 //Simple function
 function sayHi(name){
     console.log(`Hi, ${name}`)

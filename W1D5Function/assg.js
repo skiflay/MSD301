@@ -33,31 +33,26 @@ function  areaOfCircle(){
 console.log("expect area of circle: ", areaOfCircle());
 
 //calculates the total volume of a house
-let width = +prompt("Enter the width of the house: ");
-let height = +prompt("Enter the height of the house: ");
-let depth = +prompt("Enter the depth of the house: ");
-let sweep = +prompt("Enter the sweep of the house: ");
 
-function houseVolume(){
-    let lVol;
-    let rVol;
-    let hVolume = lVol + rVol
-    //livingVolume = width * height * depth
-    function livingVolum(){
-       lVol = width * height * depth;
-       console.log(lVol)
-       return lVol;
-    } 
-    //roofVolume = triangleArea*depth
-    function roofVolume(a,b,c){
-        let s = Number(a+b+c)/2;
-        let triangleArea = Number(Math.sqrt(Math.sqrt((s-a)*(s-b)*(s-c))));
-        rVol = Number(triangleArea*depth);
-        console.log(Number(rVol))
-        return rVol;
-    }
-    livingVolum(2,3,5);
-    roofVolume();
-    return hVolume;
+ function houseVolume(width, height, depth, sweep){
+    const lv = livingVolume(width, height, depth);
+    const rv = roofVolume(sweep, width, depth);
+    return  lv + rv;  
 }
-console.log("expect area of circle: ", houseVolume()); 
+
+function livingVolume(width, height, depth){
+    return width * height * depth;
+}
+
+function roofVolume(sweep, width, depth){
+    return triangleArea(sweep, sweep, width) * depth;
+}
+
+function triangleArea(sideA, sideB, sideC){
+    const s = (sideA + sideB + sideC)/2
+    const product = s * (s - sideA) * (s - sideB) * (s - sideC);
+    const result = Math.sqrt(product);
+    return result;
+}
+
+console.log("expect 2080", houseVolume(16,10,10,10));
