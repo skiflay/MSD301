@@ -69,3 +69,28 @@ const compute = function(add, a,b){
 make it available throughout your code. Use function expressions to limit where the function is available, 
 keep your global scope light, and maintain clean syntax
 */
+// Q-Functions are values in JavaScript
+/* A- True. functions are not only syntax but also values, 
+    which means they can be assigned to variables, passed as arguments to functions, 
+    stored in the properties of objects or the elements of arrays and so on
+E.G 
+// Function assigned to variables
+const funVariable = (a, b)=>{
+    return a +b;
+}
+//passed as arguments to functions
+const funAsArgmt =(add, a, b)=>{
+    add(a,b);
+}
+function add(a,b){
+    return a+b;
+}
+// Fun stored in object
+let user = {
+  name: "John",
+  age: 30
+};
+user.sayHi = function() {
+  alert("Hello!");
+};
+*/
