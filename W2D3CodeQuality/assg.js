@@ -12,15 +12,13 @@ exports.areaOfCircle = areaOfCircle;
 
 function checkPrime(n){
     for(let i=2; i<n; i++){
-        if(n%i!==0){
-            console.log(true)
-            return true
-        }
-        console.log(false)
-        return false
+        if(n%i===0){
+            return false
+        }    
     }
+    return true
     }
-    checkPrime(9)
+    checkPrime(77)
     
     /**
      * 
@@ -29,7 +27,8 @@ function checkPrime(n){
      * @process - multiply value of PI with square of radius
      */
     function  areaOfCircle(r){
-        return (Math.PI * r *r).toFixed(2)
+        let pi = 3.14
+        return pi * r *r;
         }
         
     console.log("expect area of circle: ", areaOfCircle(1));
