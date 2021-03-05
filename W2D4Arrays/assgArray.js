@@ -4,6 +4,8 @@ exports.getMiddle = getMiddle;
 exports.rotateLeft = rotateLeft;
 exports.rotateRight = rotateRight;
 exports.rotateNRight = rotateNRight;
+exports.filterRange = filterRange;
+exports.filterPalindromes = filterPalindromes;
 /**
  * 
  * @param {Array} arr is array of nums
@@ -84,14 +86,58 @@ function rotateNRight(arr, n){
   * @returns {number} - sum of the positive elements
   */
  function fmrString(str){
-     let arr = str.split("").join("")
-     parseInt(arr)
-     let newArr = [arr];
-     console.log(newArr)
-     let posArr = [];
-     for(let i=0; i<newArr.length; i++){
-         //console.log(i) 
-     }
+     let arr = str.split("").join("");
+     console.log(arr)
      
  }
  console.log(fmrString("32, 105,  -22"))
+ /**
+  * @param {Array, a, b} arr - array, two numbers of a and b
+  * @returns {Array} 
+  */
+ function filterRange(arr, a, b){ //higher or equal to a 
+    let newArr= []
+    for(let i=0; i<arr.length; i++){
+        if(arr[i]>=a && arr[i]<=b ){
+         newArr.push(arr[i]) 
+        }     
+    }
+    return newArr;
+    }
+ //console.log(filterRange([0, 100, 3, 6, -555], 6, 160))  //, [100, 6])
+
+/**
+ * @param {Array} - takes an array
+ * @returns {Array} - palindrome array
+ */
+function filterPalindromes(arr){
+    let str = []
+    let word;
+    for(let ele of arr){
+       word=ele.split("").reverse().join("")
+       if(word===ele) {
+           str.push(word)
+       }
+    }
+    return str
+}
+//console.log(filterPalindromes(["not", "a", "kayak", "eagle", "racecar"]))
+/**
+ * @param {arr, arr} num - matrix array of numbers
+ * @returns {Array} num - addition of matrix numbers of two arrays
+ */
+function matrixAddition(arr, arr1){
+ let max1 = arr.concat()
+ console.log(max1)
+ let max2 = arr1.concat()
+ let addMax =[[],[]]
+ for(let i=0; i<max1.length; i++){
+     for(let j=0; j<max2.length; j++){
+         let res = max1[i] + max2[j] 
+        addMax[0].push(res)
+     }
+    
+ }
+ return addMax;
+}
+ //console.log(matrixAddition([[0, 1, 2], [9, 8, 7]], [[6, 5, 4], [3, 4, 5]]))//, [[6, 6, 6], [12, 12, 12]]
