@@ -6,6 +6,8 @@ exports.rotateRight = rotateRight;
 exports.rotateNRight = rotateNRight;
 exports.filterRange = filterRange;
 exports.filterPalindromes = filterPalindromes;
+exports.fmrString = fmrString;
+exports.matrixAddition = matrixAddition;
 /**
  * 
  * @param {Array} arr is array of nums
@@ -85,12 +87,17 @@ function rotateNRight(arr, n){
   * @param {String} -string of  numbers as comma separated values
   * @returns {number} - sum of the positive elements
   */
- function fmrString(str){
-     let arr = str.split("").join("");
-     console.log(arr)
-     
- }
- console.log(fmrString("32, 105,  -22"))
+  function fmrString(str){
+    let arr = str.split(" ");
+    let sum =[];
+    for(let i=0; i<arr.length; i++){
+       if(arr[i]>=0){
+           sum.push(arr[i])
+       }
+    }
+    return sum    
+}
+ console.log(fmrString("32, 105, -22"))
  /**
   * @param {Array, a, b} arr - array, two numbers of a and b
   * @returns {Array} 
@@ -126,18 +133,12 @@ function filterPalindromes(arr){
  * @param {arr, arr} num - matrix array of numbers
  * @returns {Array} num - addition of matrix numbers of two arrays
  */
-function matrixAddition(arr, arr1){
- let max1 = arr.concat()
- console.log(max1)
- let max2 = arr1.concat()
- let addMax =[[],[]]
- for(let i=0; i<max1.length; i++){
-     for(let j=0; j<max2.length; j++){
-         let res = max1[i] + max2[j] 
-        addMax[0].push(res)
+ function matrixAddition(matrix1, matrix2){
+     let sumMatrix =[[],[]];
+     for(let i=0; i<matrix1.length; i++){
+         for(let j=0; j<matrix1[i].length; j++){
+             sumMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
+         }
      }
-    
+     return sumMatrix;
  }
- return addMax;
-}
- //console.log(matrixAddition([[0, 1, 2], [9, 8, 7]], [[6, 5, 4], [3, 4, 5]]))//, [[6, 6, 6], [12, 12, 12]]
