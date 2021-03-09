@@ -54,26 +54,25 @@ for(let i=0; i<str.length; i++){
 // console.log(str.toUpperCase())
 // console.log(str)
 
-function GetPrefixSuffix(a, b) {
-    let lenB = b.length;
-    let lenA = a.length;
-    let suffixB = b.substr(lenB - 1);
-    let suffixA = a.substr(lenA - 1);
-    console.log(suffixA, suffixB)
-}
-GetPrefixSuffix("swimming", "walking")
-// { 
-//     // Getting prefix of first  
-//     // string of given length 
-//     string prefix = a.substr(0, l); 
-      
-//     // length of string b 
-//     int lb = b.length(); 
-      
-//     // Calculating suffix of second string 
-//     string suffix = b.substr(lb - l); 
-      
-//     // Concatenating both prefix and suffix 
-//     return (prefix + suffix); 
-// } 
-  
+function suffix(wordA, wordB){
+    let a = wordA.split("");   
+    let b = wordB.split("");   
+    let suffix=[];
+    
+    for(let i = a.length-1, j = b.length-1; i >= 0 && j >=0; j--, i--){
+    if(a[i] == b[j]){
+    suffix.unshift(b[j]);
+    console.log(a[i] + "==" + b[j] );
+    console.log("suffix: " + suffix + "\n");
+    }
+    else{
+    console.log(a[i] + "==" + b[j] );
+    console.log("suffix: " + suffix + "\n");
+    break;
+    }
+    
+    }
+    console.log("Final suffix: " + suffix);
+    return suffix.join("");
+    }
+console.log(suffix("swimming", "walking"))
