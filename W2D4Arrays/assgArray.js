@@ -87,17 +87,23 @@ function rotateNRight(arr, n){
   * @param {String} -string of  numbers as comma separated values
   * @returns {number} - sum of the positive elements
   */
-  function fmrString(str){
-    let arr = str.split(" ");
+  function fmrString(arr){
+    let total =0
     let sum =[];
     for(let i=0; i<arr.length; i++){
-       if(arr[i]>=0){
+       if(arr[i]>0){
            sum.push(arr[i])
        }
     }
-    return sum    
+   sum= sum.toString().split('') 
+   for(let ele of sum){
+       if(ele!==','){
+           total += Number(ele)
+       }
+   } 
+   return total  
 }
- console.log(fmrString("32, 105, -22"))
+ console.log(fmrString("32, 105,-22"))
  /**
   * @param {Array, a, b} arr - array, two numbers of a and b
   * @returns {Array} 
