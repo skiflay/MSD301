@@ -28,7 +28,7 @@ function countDigits(n){
     if(n===0){
         return 0;
     } else{
-        return 1 + countDigits(parseInt(n/10));
+        return 1 + countDigits(parseInt(n/10)); 
     }
 }
 countDigits(1234);
@@ -42,6 +42,6 @@ countDigits(1234);
     if (str === "")
       return "";
     else
-      return reverse(str.substr(1)) + str.charAt(0);
+      return reverse(str.substr(1)) + str.charAt(0); 
   }
   reverse("hello");
