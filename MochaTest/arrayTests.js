@@ -1,10 +1,10 @@
 "use strict";
-/* global require */
-const arrays = require("./l8arrays.js");
-const matrixAddition = require("./l8arrays").matrixAddition;
-
-
 const assert = require("assert");
+const arrays = require("../W2D4Arrays/assgArray");
+//const matrixAddition = require("./l8arrays").matrixAddition;
+
+
+
 /* 1.	Write a function addend(arr) that accepts an array of numbers as parameters and returns the sum of first and last elements of the array. */
 describe("addend", function () {
 
@@ -66,10 +66,11 @@ describe("rotateNRight", function () {
 
 });
 
+
 /* 6.	Write a JavaScript function that takes a string of  numbers as comma separated values, e.g, “32, 105,  -22”,  and stores it into an array, e.g., [32, 105, -22] and do following operations
 a.	Filters out negative values
-b.	Maps the filtered elements to sum of its digits
-c.	Reduce to get sum of all the elements and returns this value
+b.	Maps the filtered elements to sum of its digits--i.e., 32 becomes 5 and 105 becomes 6
+c.	Reduce to get sum of all the elements and returns this value--i.e, add the 5 and 6 to get 11
 */
 describe("filter map reduce string", function () {
     it("tests 32, 105,  -22 ", function () {
@@ -80,14 +81,14 @@ describe("filter map reduce string", function () {
 /* 7.	Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array. */
 describe("filterRange", function () {
     it("tests [0, 100, 3, 6, -555], 6, 60",  function () {
-        assert.strictDeepEqual(arrays.filterRange([0, 100, 3, 6, -555], 6, 60), [100, 6]);
+        assert.deepStrictEqual([100, 6], arrays.filterRange([0, 100, 3, 6, -555], 6, 60));
     });
 });
 
 /* 8.	Write a function that takes an array of strings and returns array of palindrome strings only. */
 describe("filterPalindromes", function () {
     it("tests [not, a, kayak, eagle, racecar]",   function () {
-        assert.strictDeepEqual(arrays.filterPalindromes(["not", "a", "kayak", "eagle", "racecar"]), [ "a", "kayak", "racecar"]);
+        assert.deepStrictEqual([ "a", "kayak", "racecar"], arrays.filterPalindromes(["not", "a", "kayak", "eagle", "racecar"]));
     });
 });
 
@@ -95,7 +96,7 @@ describe("filterPalindromes", function () {
 describe("Matrix", function () {
     describe("matrixAddition", function () {
         it("matrix addition of [[0,1,2],[9,8,7]] and [[6,5,4], [3,4,5]]  should be [ [ 6, 6, 6 ], [ 12, 12, 12 ] ]", function () {
-            assert.deepStrictEqual(matrixAddition([[0, 1, 2], [9, 8, 7]], [[6, 5, 4], [3, 4, 5]]), [[6, 6, 6], [12, 12, 12]]);
+            assert.deepStrictEqual(arrays.matrixAddition([[0, 1, 2], [9, 8, 7]], [[6, 5, 4], [3, 4, 5]]), [[6, 6, 6], [12, 12, 12]]);
         });
     });
 });
